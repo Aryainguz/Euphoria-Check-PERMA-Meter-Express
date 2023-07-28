@@ -33,7 +33,7 @@ app.post("/question",(req,res)=>{
     res.render("questions")
 })
 
-app.post("/result",(req,res)=>{
+app.post("/result",async (req,res)=>{
   let p = (parseFloat(req.body.avalue)+parseFloat(req.body.bvalue)+parseFloat(req.body.cvalue)+parseFloat(req.body.dvalue))/2
   let e = (parseFloat(req.body.evalue)+parseFloat(req.body.fvalue)+parseFloat(req.body.gvalue)+parseFloat(req.body.hvalue))/2
   let r = (parseFloat(req.body.ivalue)+parseFloat(req.body.jvalue)+parseFloat(req.body.kvalue)+parseFloat(req.body.lvalue))/2
@@ -64,7 +64,7 @@ app.post("/result",(req,res)=>{
       subject:"Euphoria Check",
       text:`Here are your PERMA scores\n\nPositive Emotions: ${p} \nEngagement: ${e} \nRelationships: ${r} \nMeaning: ${m} \nAccomplishment: ${a} \n\n ${verdict[0]} \n\n Aryan Inguz.`
     }
-     sgMail
+     await sgMail
      .send(message)
      .then((response)=>console.log("Email sent!"))
      .catch((error)=>console.log(error.message))
