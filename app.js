@@ -5,7 +5,7 @@ const sgMail = require("@sendgrid/mail")
 
 require("dotenv").config()
 
-const API_KEY = 'SG.'+process.env.KEY
+const API_KEY = process.env.KEY
 sgMail.setApiKey(API_KEY)
 
 
