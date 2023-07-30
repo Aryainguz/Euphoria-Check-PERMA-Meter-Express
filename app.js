@@ -5,7 +5,7 @@ const sgMail = require("@sendgrid/mail")
 
 require("dotenv").config()
 
-const API_KEY = process.env.KEY
+const API_KEY = 'SG.'+process.env.KEY
 sgMail.setApiKey(API_KEY)
 
 
@@ -57,19 +57,24 @@ app.post("/result",async (req,res)=>{
      verdict.push("I want you to know that i beleive you've achieved some remarkable things, and your hard work is commendable. However, I also sense that you might be setting high expectations for yourself. It's essential to recognize and celebrate your accomplishments, no matter how small they might seem. We'll work on setting realistic and achievable goals, which will give you a sense of progress and success, boosting your self-confidence and well-being.")
   }
 
-
-    const message = {
-      to : reciever_email[0],
-      from : process.env.FROM,
-      subject:"Euphoria Check",
-      text:`Here are your PERMA scores\n\nPositive Emotions: ${p} \nEngagement: ${e} \nRelationships: ${r} \nMeaning: ${m} \nAccomplishment: ${a} \n\n ${verdict[0]} \n\n Aryan Inguz.`
-    }
+ if(isNaN(p) || isNaN(e) || isNaN(r) || isNaN(m) || isNaN(a)){
+  res.render("error")
+ }
+ else{
+  const message = {
+    to : reciever_email.pop(),
+    from : 'aryans12345678@gmail.com',
+    subject:"Euphoria Check",
+    text:`Here are your PERMA scores\n\nPositive Emotions: ${p} \nEngagement: ${e} \nRelationships: ${r} \nMeaning: ${m} \nAccomplishment: ${a} \n\n ${verdict.slice(-1)} \n\n Aryan Inguz.`
+  }
      await sgMail
      .send(message)
      .then((response)=>console.log("Email sent!"))
      .catch((error)=>console.log(error.message))
 
   res.render("result",{pos:p,eng:e,mea:m,rel:r,acc:a})
+ }
+
 })
 
 
