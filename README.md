@@ -12,4 +12,4 @@ Key Features:
 
 Feel free to contribute! 🌈✨
 
-View Web App here : https://euphoria-check-perma-meter-express-5qcdl90eh-aryainguz.vercel.app
+View Web App here : https://euphoria-check-perma-meter-express-65aqxla74-aryainguz.vercel.app/
