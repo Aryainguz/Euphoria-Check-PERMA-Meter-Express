@@ -63,7 +63,7 @@ app.post("/result",async (req,res)=>{
  else{
   const message = {
     to : reciever_email.pop(),
-    from : 'aryans12345678@gmail.com',
+    from : process.env.FROM,
     subject:"Euphoria Check",
     text:`Here are your PERMA scores\n\nPositive Emotions: ${p} \nEngagement: ${e} \nRelationships: ${r} \nMeaning: ${m} \nAccomplishment: ${a} \n\n ${verdict.slice(-1)} \n\n Aryan Inguz.`
   }
