@@ -6,9 +6,9 @@ With personalized insights, users gain a comprehensive breakdown of their PERMA 
 Users recieves a personalized note on email that helps them set their targets and improve on specific score so they keep on evolving  
 
 Key Features:
-📊 Happiness Assessment: 
-📈 Personalized Insights: 
-🎯 Goal Setting:
+📊 Happiness Assessment
+📈 Personalized Insights
+🎯 Goal Setting
 
 Feel free to contribute! 🌈✨
 
