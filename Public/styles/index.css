@@ -117,6 +117,7 @@ body {
 .cta-card__button:active {
   transform: translate(0.3rem, -50%);
 }
+
 @media only screen and (max-width: 37.5em) {
   .cta-card__button:active {
     transform: none;
