@@ -1,13 +1,13 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const axios = require("axios")
-// const sgMail = require("@sendgrid/mail")
-const nodemailer = require("nodemailer");
+const sgMail = require("@sendgrid/mail")
+
 
 require("dotenv").config()
 
-// const API_KEY = process.env.SENDGRID_API_KEY
-// sgMail.setApiKey(API_KEY)
+const API_KEY = process.env.SENDGRID_API_KEY
+sgMail.setApiKey(API_KEY)
 
 
 const PORT = 3000
@@ -63,22 +63,10 @@ app.post("/result", async (req, res) => {
   }
   else {
 
-    var transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user:process.env.FROM,
-        pass:process.env.PASS // Add your Gmail App password here
-      },
-      authMethod: 'PLAIN'
-    });
-
-
-    var mailOptions = {
-      from:process.env.FROM,
+    const message = {
       to: reciever_email.pop(),
+      from: process.env.FROM,
       subject: "Euphoria Check",
-
-      //email body
       html: `<html>
       <head>
       <style>
@@ -125,7 +113,7 @@ app.post("/result", async (req, res) => {
       .verdict {
           font-size: 24px; /* Increased font size for the verdict */
           font-weight: bold;
-          color: #28a745; /* Green color for positive verdict */
+          color: 007bff;
           margin-bottom: 20px;
       }
     
@@ -185,18 +173,15 @@ app.post("/result", async (req, res) => {
       </body>
       </html>
       `,
-    };
+    }
+    await sgMail
+      .send(message)
+      .then((response) => console.log("Email sent!"))
+      .catch((error) => console.log(error.message))
 
-    await transporter.sendMail(mailOptions, function (error, info) {
-      if (error) {
-        console.log(error);
-      } else {
-        console.log('Email sent: ' + info.response);
-      }
-    });
+    res.render("result", { pos: p, eng: e, mea: m, rel: r, acc: a })
+  }
 
-    res.render("result", { pos: p, eng: e, mea: m, rel: r, acc: a });
-  };
 
 })
 
