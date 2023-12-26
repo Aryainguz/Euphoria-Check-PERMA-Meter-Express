@@ -119,6 +119,7 @@ body {
   transform: translate(0.3rem, -50%);
 }
 
+<<<<<<< HEAD
 footer {
   padding: 12px;
   height: 150px;
@@ -169,6 +170,8 @@ footer {
   border-radius: 12px;
 }
 
+=======
+>>>>>>> origin/main
 @media only screen and (max-width: 37.5em) {
   .cta-card__button:active {
     transform: none;
