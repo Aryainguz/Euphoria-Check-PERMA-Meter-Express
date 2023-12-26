@@ -13,14 +13,13 @@ html {
 
 body {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   min-height: 100vh;
   font-family: "Mulish", sans-serif;
 }
 
 .cta-card {
-  margin-top: 40px;
   position: relative;
   width: 100rem;
   border-radius: 2rem;
@@ -119,59 +118,6 @@ body {
   transform: translate(0.3rem, -50%);
 }
 
-<<<<<<< HEAD
-footer {
-  padding: 12px;
-  height: 150px;
-  width: 100%;
-  background-color: black;
-  position: fixed;
-  bottom: 0;
-}
-.wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: space-around;
-}
-
-.github-logo {
-  width: 50px;
-}
-
-.article-header {
-  color: white;
-  font-size: x-large;
-}
-
-.article-links {
-  margin-top: 7px;
-  text-decoration: none;
-  color: white;
-  font-size: 1.65rem;
-}
-.left {
-  display: flex;
-  flex-direction: column;
-}
-
-.github {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.github-link {
-  color: black;
-  font-size: large;
-  text-decoration: none;
-  background-color: white;
-  padding: 8px;
-  border-radius: 12px;
-}
-
-=======
->>>>>>> origin/main
 @media only screen and (max-width: 37.5em) {
   .cta-card__button:active {
     transform: none;
@@ -247,4 +193,4 @@ footer {
   .cta-card {
     padding: 6rem 0 8.5rem;
   }
-} /*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */
