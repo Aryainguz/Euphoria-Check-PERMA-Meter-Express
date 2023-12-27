@@ -13,4 +13,4 @@ Users recieves a personalized note on email that helps them set their targets an
 
 Feel free to contribute! 🌈✨
 
-View Web App here : https://euphoria-check-perma-meter-express-git-main-aryainguz.vercel.app/
+View Web App here : https://euphoria-check-perma-meter-express.vercel.app/
