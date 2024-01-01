@@ -2,7 +2,9 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const axios = require("axios")
 const sgMail = require("@sendgrid/mail")
-
+const inputValidator = require("./middlewares/inputvalidator")
+let flash = require('connect-flash');
+let session = require('express-session');
 
 require("dotenv").config()
 
@@ -19,6 +21,14 @@ const verdict = []
 app.use(express.static(__dirname + "/Public"));  //use this to use css files insie templates 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(session({
+  secret: "UN1QUE44E44IONKEY",
+  cookie: { maxAge : 60000 },
+  resave: false,
+  saveUninitialized: false
+
+}));
+app.use(flash());
 
 app.set('views', __dirname + '/views');
 app.set("view engine", "ejs");
@@ -34,10 +44,11 @@ app.post("/question", (req, res) => {
   if(!validateEmail) return res.render("error",{errorMessage: "email validation failed!"})
 
   reciever_email.push(reciever)
-  res.render("questions")
+  req.flash("message", "");
+  res.render("questions", {message: req.flash('message')});
 })
 
-app.post("/result", async (req, res) => {
+app.post("/result", inputValidator, async (req, res) => {
   let p = (parseFloat(req.body.avalue) + parseFloat(req.body.bvalue) + parseFloat(req.body.cvalue) + parseFloat(req.body.dvalue)) / 2
   let e = (parseFloat(req.body.evalue) + parseFloat(req.body.fvalue) + parseFloat(req.body.gvalue) + parseFloat(req.body.hvalue)) / 2
   let r = (parseFloat(req.body.ivalue) + parseFloat(req.body.jvalue) + parseFloat(req.body.kvalue) + parseFloat(req.body.lvalue)) / 2

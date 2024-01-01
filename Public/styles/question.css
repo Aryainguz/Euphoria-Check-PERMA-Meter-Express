@@ -19,6 +19,17 @@
   margin-top: 15px;
 }
 
+.flasherror {
+  background-color: #ef5353;
+  color: white;
+  padding: 15px;
+  font-style: inherit;
+  width: fit-content;
+  margin-left: 80px;
+  border-radius: 4px;
+}
+
+
 .info {
   margin-bottom: 10px;
   display: flex;
