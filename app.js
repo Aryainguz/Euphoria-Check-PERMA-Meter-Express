@@ -30,6 +30,9 @@ app.get("/", (req, res) => {
 
 app.post("/question", (req, res) => {
   const reciever = req.body.reciever_email
+  const validateEmail= (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/).test(reciever) /* validate email */
+  if(!validateEmail) return res.render("error",{errorMessage: "email validation failed!"})
+
   reciever_email.push(reciever)
   res.render("questions")
 })
@@ -59,7 +62,8 @@ app.post("/result", async (req, res) => {
   }
 
   if (isNaN(p) || isNaN(e) || isNaN(r) || isNaN(m) || isNaN(a)) {
-    res.render("error")
+  
+    res.render("error",{ errorMessage: "Please answer all the questions to calculate PERMA Score!"})
   }
   else {
 
