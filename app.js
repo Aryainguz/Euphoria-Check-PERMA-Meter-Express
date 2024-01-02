@@ -22,7 +22,7 @@ app.use(express.static(__dirname + "/Public"));  //use this to use css files ins
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(session({
-  secret: "UN1QUE44E44IONKEY",
+  secret: "process.env.SECRET",
   cookie: { maxAge : 60000 },
   resave: false,
   saveUninitialized: false
