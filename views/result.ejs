@@ -84,7 +84,27 @@
             <span class="leaderboard__name">Accomplishment</span>
             <span class="leaderboard__value"><%= acc  %></span>
           </article>
+
         </main>
       </div>
+      <div class="screenshotContainer">
+        <button id="screenshotButton">Take Screenshot</button>
+      </div>
+      <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+
+      <script>
+        document.getElementById('screenshotButton').addEventListener('click', function() {
+          html2canvas(document.body).then(function(canvas) {
+            var dataUrl = canvas.toDataURL();
+            var link = document.createElement('a');
+            link.href = dataUrl;
+            link.download = 'screenshot.png';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          });
+        });
+      </script>
+      
 </body>
 </html>

@@ -106,3 +106,31 @@ body {
 .leaderboard {
   box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.4);
 }/*# sourceMappingURL=result.css.map */
+
+
+/* Button Styles */
+.screenshotContainer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center; 
+  
+}
+#screenshotButton {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #4f70f0;
+  color: #4f70f0; 
+  background-color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#screenshotButton:hover {
+  background-color: #395cde; 
+  color: #fff; 
+}
