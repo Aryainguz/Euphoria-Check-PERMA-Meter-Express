@@ -7,9 +7,17 @@
     <link rel="stylesheet" href="styles\result.css">
 </head>
 <body style="background-image: url(images/vector-purple-light-blue-gradient-260nw-1941567055.jpg);background-repeat: no-repeat;background-position: center;background-size: cover;">
+  <div class="btn"  onclick="goBack()" >
+    <button>
+      <div class="arrow-wrapper">
+        <div class="arrow"></div>
+      </div>
+      go back
+    </button>
+  </div>
     <article class="leaderboard">
         <header>
-      
+          
           <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 511.999 511.999;" xml:space="preserve" class="leaderboard__icon">
             <g>
               <g>
@@ -104,7 +112,8 @@
             document.body.removeChild(link);
           });
         });
+        function goBack() {
+        // Use window.history to navigate back
+        window.history.back();
+    }
       </script>
-      
-</body>
-</html>
