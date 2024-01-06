@@ -3,9 +3,11 @@ View Web App here : https://euphoria-check-perma-meter-express.vercel.app/
 # Euphoria Check - A Modern PERMA Meter
 
 **Euphoria-Check** is an open-source web application that helps you assess your well-being and happiness based on the PERMA model developed by psychologist Martin Seligman. It asks you a series of questions and provides you with a PERMA score, along with a personalized email based on the areas you might be lacking.
+## **Questions:**
+<img src="./Public/images/initial-questions.png" alt="Questions screenshot" width="840" height="400">
 
-
-![PERMA Meter Screenshot](./Public/images/Screenshot%202023-10-19%20131208.png)
+## **Sample Result:**
+<img src="./Public/images/sample-result.png" alt="Sample Result of Euphoria Check" width="840" height="400">
 
 ## Features
 
