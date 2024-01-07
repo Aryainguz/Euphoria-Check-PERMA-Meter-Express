@@ -1,4 +1,4 @@
-const express = require("express")
+const express = require('express')
 const bodyParser = require("body-parser")
 const axios = require("axios")
 const sgMail = require("@sendgrid/mail")
@@ -12,7 +12,7 @@ const API_KEY = process.env.SENDGRID_API_KEY
 sgMail.setApiKey(API_KEY)
 
 
-const PORT = 3000
+const PORT = 9000
 const app = express()
 const reciever_email = []
 
@@ -200,6 +200,6 @@ app.post("/result", inputValidator, async (req, res) => {
 
 })
 
-app.listen(process.env.PORT || 3000, function () {
+app.listen(process.env.PORT || 8000, function () {
   console.log("Server Started Sucessfully")
 })

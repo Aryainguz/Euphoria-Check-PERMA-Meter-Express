@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questions | Euphoria Check</title>
     <link rel="stylesheet" href="styles/question.css">
-
 </head>
 <body style="background-image: url(https://images.unsplash.com/photo-1557682250-33bd709cbe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y29sb3IlMjBiYWNrZ3JvdW5kfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60);background-repeat: no-repeat;background-position: center;background-size: cover;">
 
@@ -14,10 +13,16 @@
     <div class="flasherror">
       <%= message %>
     </div>
-
 <% } %>
 
+
+
   <form action="/result" method="post">
+
+
+<!-- ADDING MODULARITY BY DIVIDING QUESTIONS INTO GROUPS -->
+
+<!-- Emotional Well-being -->
   <div class="radio-input">
     <div class="info">
     <span class="question">How often do you find yourself happy?</span>
@@ -62,8 +67,7 @@
     <label for="value-1d">Negative</label>
   </div>
 
-
-
+<!-- Social Connections -->
 
   <div class="radio-input">
     <div class="info">
@@ -75,6 +79,42 @@
     <input type="radio" id="value-1e" name="evalue" value=0>
     <label for="value-1e">Rarely</label>
   </div>
+
+  <div class="radio-input">
+    <div class="info">
+    <span class="question">How often do you spend quality time with people who uplift and inspire you?</span>
+    <span class="steps">10/30</span>
+     </div>
+     <input type="radio" id="value-2j" name="jvalue" value=5>
+     <label for="value-2j">Frequently</label>
+    <input type="radio" id="value-1j" name="jvalue" value=0>
+    <label for="value-1j">Rarely</label>
+  </div>
+
+  <div class="radio-input">
+    <div class="info">
+    <span class="question">Do you feel comfortable sharing your thoughts and feelings with others?</span>
+    <span class="steps">11/30</span>
+     </div>
+     <input type="radio" id="value-2k" name="kvalue" value=5>
+     <label for="value-2k">Affirmative</label>
+    <input type="radio" id="value-1k" name="kvalue" value=0>
+    <label for="value-1k">Negative</label>
+  </div>
+
+  <div class="radio-input">
+    <div class="info">
+    <span class="question">Do you feel you need a partner?</span>
+    <span class="steps">12/30</span>
+     </div>
+     <input type="radio" id="value-2l" name="lvalue" value=0>
+     <label for="value-2l">Affirmative</label>
+    <input type="radio" id="value-1l" name="lvalue" value=5>
+    <label for="value-1l">Negative</label>
+  </div>
+
+  <!-- Personal Growth -->
+
   <div class="radio-input">
     <div class="info">
     <span class="question">How often do when you're doing activities you enjoy, you lose track of time?</span>
@@ -95,6 +135,18 @@
     <input type="radio" id="value-2g" name="gvalue" value=5>
     <label for="value-2g">Frequently</label>
   </div>
+  
+  <div class="radio-input">
+    <div class="info">
+    <span class="question">How often do you express gratitude towards yourself and acknowledge your achievements, no matter how small?</span>
+    <span class="steps">24/30</span>
+     </div>
+     <input type="radio" id="value-2t" name="tvalue" value=5>
+     <label for="value-2t">Frequently</label>
+    <input type="radio" id="value-1t" name="tvalue" value=0>
+    <label for="value-1t">Rarely</label>
+  </div>
+
   <div class="radio-input">
     <div class="info">
     <span class="question">Can you dance without fear in public?</span>
@@ -106,6 +158,7 @@
     <label for="value-1h">Negative</label>
   </div>
 
+<!-- Purpose and Direction -->
 
   <div class="radio-input">
     <div class="info">
@@ -116,36 +169,6 @@
      <label for="value-2i">Affirmative</label>
     <input type="radio" id="value-1i" name="ivalue" value=0>
     <label for="value-1i">Negative</label>
-  </div>
-  <div class="radio-input">
-    <div class="info">
-    <span class="question">How often do you spend quality time with people who uplift and inspire you?</span>
-    <span class="steps">10/30</span>
-     </div>
-     <input type="radio" id="value-2j" name="jvalue" value=5>
-     <label for="value-2j">Frequently</label>
-    <input type="radio" id="value-1j" name="jvalue" value=0>
-    <label for="value-1j">Rarely</label>
-  </div>
-  <div class="radio-input">
-    <div class="info">
-    <span class="question">Do you feel comfortable sharing your thoughts and feelings with others?</span>
-    <span class="steps">11/30</span>
-     </div>
-     <input type="radio" id="value-2k" name="kvalue" value=5>
-     <label for="value-2k">Affirmative</label>
-    <input type="radio" id="value-1k" name="kvalue" value=0>
-    <label for="value-1k">Negative</label>
-  </div>
-  <div class="radio-input">
-    <div class="info">
-    <span class="question">Do you feel you need a partner?</span>
-    <span class="steps">12/30</span>
-     </div>
-     <input type="radio" id="value-2l" name="lvalue" value=0>
-     <label for="value-2l">Affirmative</label>
-    <input type="radio" id="value-1l" name="lvalue" value=5>
-    <label for="value-1l">Negative</label>
   </div>
 
 
@@ -179,17 +202,6 @@
     <input type="radio" id="value-1o" name="ovalue" value=5>
     <label for="value-1o">Negative</label>
   </div>
-  <div class="radio-input">
-    <div class="info">
-    <span class="question">Do you like going to college/school/office ?</span>
-    <span class="steps">16/30</span>
-     </div>
-     <input type="radio" id="value-2p" name="pvalue" value=5>
-     <label for="value-2p">Affirmative</label>
-    <input type="radio" id="value-1p" name="pvalue" value=0>
-    <label for="value-1p">Negative</label>
-  </div>
-
 
   <div class="radio-input">
     <div class="info">
@@ -201,6 +213,7 @@
     <input type="radio" id="value-1q" name="qvalue" value=0>
     <label for="value-1q">Negative</label>
   </div>
+
   <div class="radio-input">
     <div class="info">
     <span class="question">Do you think your Parents are proud of you?</span>
@@ -211,6 +224,7 @@
     <input type="radio" id="value-1r" name="rvalue" value=0>
     <label for="value-1r">Negative</label>
   </div>
+
   <div class="radio-input">
     <div class="info">
     <span class="question">Do you think people respect you ?</span>
@@ -221,6 +235,7 @@
     <input type="radio" id="value-1s" name="svalue" value=0>
     <label for="value-1s">Negative</label>
   </div>
+
   <div class="radio-input">
     <div class="info">
     <span class="question">Do you think you have done good in your life so far ?</span>
@@ -232,15 +247,16 @@
     <label for="value-1t">Negative</label>
   </div>
 
+  <!-- Work-Life Balance -->
   <div class="radio-input">
     <div class="info">
-    <span class="question">How often do you take time for self-care activities, such as meditation or relaxation exercises?</span>
-    <span class="steps">21/30</span>
+    <span class="question">Do you like going to college/school/office ?</span>
+    <span class="steps">16/30</span>
      </div>
-     <input type="radio" id="value-2t" name="tvalue" value=5>
-     <label for="value-2t">Frequently</label>
-    <input type="radio" id="value-1t" name="tvalue" value=0>
-    <label for="value-1t">Rarely</label>
+     <input type="radio" id="value-2p" name="pvalue" value=5>
+     <label for="value-2p">Affirmative</label>
+    <input type="radio" id="value-1p" name="pvalue" value=0>
+    <label for="value-1p">Negative</label>
   </div>
 
   <div class="radio-input">
@@ -254,21 +270,24 @@
     <label for="value-1t">No</label>
   </div>
 
+  <!-- Self-Care and Relaxation -->
+
   <div class="radio-input">
     <div class="info">
-    <span class="question">How often do you engage in activities that contribute to your personal growth and development?</span>
-    <span class="steps">23/30</span>
+    <span class="question">How often do you take time for self-care activities, such as meditation or relaxation exercises?</span>
+    <span class="steps">21/30</span>
      </div>
      <input type="radio" id="value-2t" name="tvalue" value=5>
      <label for="value-2t">Frequently</label>
     <input type="radio" id="value-1t" name="tvalue" value=0>
     <label for="value-1t">Rarely</label>
   </div>
-
+  
+  <!-- Learning and Development -->
   <div class="radio-input">
     <div class="info">
-    <span class="question">How often do you express gratitude towards yourself and acknowledge your achievements, no matter how small?</span>
-    <span class="steps">24/30</span>
+    <span class="question">How often do you engage in activities that contribute to your personal growth and development?</span>
+    <span class="steps">23/30</span>
      </div>
      <input type="radio" id="value-2t" name="tvalue" value=5>
      <label for="value-2t">Frequently</label>
@@ -287,6 +306,21 @@
     <label for="value-1t">No</label>
   </div>
 
+<!-- Community and Social Engagement -->
+<div class="radio-input">
+  <div class="info">
+  <span class="question">Are you actively involved in your community or social groups?</span>
+  <span class="steps">27/30</span>
+   </div>
+   <input type="radio" id="value-2t" name="tvalue" value=5>
+   <label for="value-2t">Yes</label>
+  <input type="radio" id="value-1t" name="tvalue" value=0>
+  <label for="value-1t">No</label>
+</div>
+
+
+<!-- Reflection on Relationships -->
+
   <div class="radio-input">
     <div class="info">
     <span class="question">How often do you express kindness and compassion towards others?</span>
@@ -296,17 +330,6 @@
      <label for="value-2t">Frequently</label>
     <input type="radio" id="value-1t" name="tvalue" value=0>
     <label for="value-1t">Rarely</label>
-  </div>
-
-  <div class="radio-input">
-    <div class="info">
-    <span class="question">Are you actively involved in your community or social groups?</span>
-    <span class="steps">27/30</span>
-     </div>
-     <input type="radio" id="value-2t" name="tvalue" value=5>
-     <label for="value-2t">Yes</label>
-    <input type="radio" id="value-1t" name="tvalue" value=0>
-    <label for="value-1t">No</label>
   </div>
 
   <div class="radio-input">
@@ -369,3 +392,11 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
