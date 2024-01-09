@@ -200,6 +200,34 @@ app.post("/result", inputValidator, async (req, res) => {
 
 })
 
+app.post("/tips",function(req,res){
+  let p = (parseFloat(req.body.avalue) + parseFloat(req.body.bvalue) + parseFloat(req.body.cvalue) + parseFloat(req.body.dvalue)) / 2
+  let e = (parseFloat(req.body.evalue) + parseFloat(req.body.fvalue) + parseFloat(req.body.gvalue) + parseFloat(req.body.hvalue)) / 2
+  let r = (parseFloat(req.body.ivalue) + parseFloat(req.body.jvalue) + parseFloat(req.body.kvalue) + parseFloat(req.body.lvalue)) / 2
+  let m = (parseFloat(req.body.mvalue) + parseFloat(req.body.nvalue) + parseFloat(req.body.ovalue) + parseFloat(req.body.pvalue)) / 2
+  let a = (parseFloat(req.body.qvalue) + parseFloat(req.body.rvalue) + parseFloat(req.body.svalue) + parseFloat(req.body.tvalue)) / 2
+
+
+  if (p < e && p < r && p < m && p < a) {
+    res.render("positiveemotions")
+  }
+  else if (r < p && r < e && r < m && r < a) {
+    res.render("relationships")
+  }
+  else if (e < r && e < r && e < m && e < a) {
+    res.render("engagement")
+  }
+  else if (m < r && m < p && m < e && m < a) {
+    res.render("meaning")
+  }
+  else if (a < r && a < p && a < m && a < e) {
+    res.render("accomplishments")
+  }
+  else{
+    res.render("error",{ errorMessage: "Please answer all the questions to calculate PERMA Score!"})
+  }
+})
+
 app.listen(process.env.PORT || 8000, function () {
   console.log("Server Started Sucessfully")
 })
