@@ -32,6 +32,7 @@ app.use(flash());
 
 app.set('views', __dirname + '/views');
 app.set("view engine", "ejs");
+app.use(express.static(__dirname + '/Public'));
 
 
 app.get("/", (req, res) => {
