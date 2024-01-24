@@ -54,3 +54,10 @@ npm start
 ```
 
 ### That's it application will start on localhost:3000
+
+
+# ✨ Contributors
+
+<a href="https://github.com/Aryainguz/Euphoria-Check-PERMA-Meter-Express/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Aryainguz/Euphoria-Check-PERMA-Meter-Express" />
+</a>
