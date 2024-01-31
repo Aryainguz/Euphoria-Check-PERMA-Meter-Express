@@ -224,7 +224,9 @@ app.post("/tips",function(req,res){
     res.render("accomplishments")
   }
   else{
-    res.render("error",{ errorMessage: "Please answer all the questions to calculate PERMA Score!"})
+    res.render('error', {
+      errorMessage: "We're just a few steps away! Please complete all questions to unveil your PERMA Score."
+  });
   }
 })
 
