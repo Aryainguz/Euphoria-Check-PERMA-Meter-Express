@@ -75,7 +75,7 @@ app.post("/result", inputValidator, async (req, res) => {
 
   if (isNaN(p) || isNaN(e) || isNaN(r) || isNaN(m) || isNaN(a)) {
   
-    res.render("error",{ errorMessage: "Please answer all the questions to calculate PERMA Score!"})
+    res.render("error",{ errorMessage: "We're just a few steps away! Please complete all questions to unveil your PERMA Score"})
   }
   else {
 
@@ -225,7 +225,7 @@ app.post("/tips",function(req,res){
     res.render("accomplishments")
   }
   else{
-    res.render("error",{ errorMessage: "Please answer all the questions to calculate PERMA Score!"})
+    res.render("error",{ errorMessage: "We're just a few steps away! Please complete all questions to unveil your PERMA Score."})
   }
 })
 
